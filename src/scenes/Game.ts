@@ -1,4 +1,5 @@
 import Phaser from 'phaser'
+import {events} from '../events/EventCenter'
 
 export default class Game extends Phaser.Scene {
 	constructor() {
@@ -18,5 +19,7 @@ export default class Game extends Phaser.Scene {
 		this.add.text(circle.x, circle.y, 'die').setOrigin(0.5)
 	}
 
-	update(time: number, delta: number): void {}
+	update(time: number, delta: number): void {
+		events.emit('time-changed', time)
+	}
 }
