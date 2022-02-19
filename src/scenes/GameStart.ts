@@ -8,7 +8,7 @@ export default class GameStart extends Phaser.Scene {
 	create() {
 		const {width, height} = this.scale
 		this.add
-			.text(width * 0.5, height * 0.3, 'Game Name!', {
+			.text(width * 0.5, height * 0.3, 'Smoosh!', {
 				fontSize: '52px',
 				color: '#ff0000',
 			})

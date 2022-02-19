@@ -8,8 +8,8 @@ import GameOver from './scenes/GameOver'
 
 const config: Phaser.Types.Core.GameConfig = {
 	type: Phaser.AUTO,
-	width: 1200,
-	height: 900,
+	width: 1280,
+	height: 1280,
 	physics: {
 		default: 'arcade',
 		arcade: {

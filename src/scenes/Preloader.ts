@@ -5,7 +5,10 @@ export default class Preloader extends Phaser.Scene {
 		super('preloader')
 	}
 
-	preload() {}
+	preload() {
+		this.load.image('tileset', '/assets/tileset.png')
+		this.load.tilemapTiledJSON('tilemap', '/assets/tilemap.json')
+	}
 
 	create() {
 		this.scene.start('game-start')
