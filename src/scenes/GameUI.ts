@@ -2,16 +2,16 @@ import Phaser from 'phaser'
 import {events} from '../events/EventCenter'
 
 export default class GameUI extends Phaser.Scene {
-	private _time!: number
+	private _score!: number
 
 	constructor() {
 		super('game-ui')
 	}
 
 	create() {
-		this._time = 0
+		this._score = 0
 
-		const timeLabel = this.add.text(30, 30, 'High Score:', {
+		const timeLabel = this.add.text(30, 30, 'Score:', {
 			fontFamily: 'Hoefler Text',
 			fontSize: '32px',
 		})
@@ -21,13 +21,13 @@ export default class GameUI extends Phaser.Scene {
 			fontSize: '32px',
 		})
 
-		events.on('time-changed', (time: number) => {
-			this._time += time
-			timeVal.text = this._time.toLocaleString()
+		events.on('score-changed', (score: number) => {
+			this._score += score
+			timeVal.text = this._score.toLocaleString()
 		})
 
 		this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-			events.off('time-changed')
+			events.off('score-changed')
 		})
 	}
 }
